@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { gql } from '@apollo/client';
-import {gotchiesQuery, svgQuery, userQuery} from './common/queries';
+import {gotchiesQuery, portalListingQuery, svgQuery, userQuery} from './common/queries';
 
 var baseUrl = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-core-matic';
 var raffleUrl = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-matic-raffle';
@@ -60,24 +60,75 @@ export default {
     async getAllGotchies() {
         // NOTE: to reduce loading speed current gotchies max amount is 7000
         // We should add new queries when there will be more than 7000 unique gotchies
-        return await graphJoin([gotchiesQuery(0, 'asc'), gotchiesQuery(1000, 'asc'), gotchiesQuery(2000, 'asc'), gotchiesQuery(3000, 'asc'), gotchiesQuery(4000, 'asc'), gotchiesQuery(5000, 'asc'), gotchiesQuery(0, 'desc'), gotchiesQuery(1000, 'desc'), gotchiesQuery(2000, 'desc'), gotchiesQuery(3000, 'desc'), gotchiesQuery(4000, 'desc'), gotchiesQuery(5000, 'desc')])
-            .then((response)=> {
-                let responseArray = [];
+        return await graphJoin([
+            gotchiesQuery(0, 'asc'),
+            gotchiesQuery(1000, 'asc'),
+            gotchiesQuery(2000, 'asc'),
+            gotchiesQuery(3000, 'asc'),
+            gotchiesQuery(4000, 'asc'),
+            gotchiesQuery(5000, 'asc'),
+            gotchiesQuery(0, 'desc'),
+            gotchiesQuery(1000, 'desc'),
+            gotchiesQuery(2000, 'desc'),
+            gotchiesQuery(3000, 'desc'),
+            gotchiesQuery(4000, 'desc'),
+            gotchiesQuery(5000, 'desc')
+        ]).then((response)=> {
+            let responseArray = [];
 
-                for (let i=0; i < response.length; i++) {
-                    responseArray = [...response[i].data.aavegotchis, ...responseArray];
+            for (let i = 0; i < response.length; i++) {
+                responseArray = [...response[i].data.aavegotchis, ...responseArray];
+            }
+
+            let filteredArray = responseArray.reduce((unique, item) => {
+                const index = unique.findIndex(el => el.id === item.id);
+
+                if (index === -1) {
+                    unique.push(item);
                 }
 
-                let filteredArray = responseArray.reduce((unique, item) => {
-                    const index = unique.findIndex(el => el.id === item.id);
-                    if(index === -1){
-                        unique.push(item);
-                    }
-                    return unique;
-                }, []);
+                return unique;
+            }, []);
 
-                return filteredArray;
-            });
+            return filteredArray;
+        });
+    },
+
+    async getAllPortals() {
+        // NOTE: to reduce loading speed current gotchies max amount is 7000
+        // We should add new queries when there will be more than 7000 unique gotchies
+        return await graphJoin([
+            portalListingQuery(0, 'asc'),
+            portalListingQuery(1000, 'asc'),
+            portalListingQuery(2000, 'asc'),
+            portalListingQuery(3000, 'asc'),
+            portalListingQuery(4000, 'asc'),
+            portalListingQuery(5000, 'asc'),
+            portalListingQuery(0, 'desc'),
+            portalListingQuery(1000, 'desc'),
+            portalListingQuery(2000, 'desc'),
+            portalListingQuery(3000, 'desc'),
+            portalListingQuery(4000, 'desc'),
+            portalListingQuery(5000, 'desc')
+        ]).then((response)=> {
+            let responseArray = [];
+
+            for (let i = 0; i < response.length; i++) {
+                responseArray = [...response[i].data.aavegotchis, ...responseArray];
+            }
+
+            let filteredArray = responseArray.reduce((unique, item) => {
+                const index = unique.findIndex(el => el.id === item.id);
+
+                if (index === -1) {
+                    unique.push(item);
+                }
+
+                return unique;
+            }, []);
+
+            return filteredArray;
+        });
     },
 
     async getGotchiesByAddresses(addressesArray) {

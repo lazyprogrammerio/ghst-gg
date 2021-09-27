@@ -1,15 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography} from '@material-ui/core';
+import { BaazaarContext } from "../../../../contexts/BaazaarContext";
 import useStyles from './styles';
 
-export default function BaazaarSidebar({loadBaazaarGoods, defaultGoodsType, defaultOrdering}) {
+export default function BaazaarSidebar({loadBaazaarGoods, defaultGoodsType, defaultOrdering, setSelectedGoodsType}) {
     const classes = useStyles();
     const [type, setType] = useState(defaultGoodsType);
     const [rarity, setRarity] = useState('');
     const [ordering, setOrdering] = useState(defaultOrdering);
     const fromRef = useRef();
     const toRef = useRef();
+    const { setSortingOrder } = useContext(BaazaarContext);
 
     const onLoadClick = () => {
         loadBaazaarGoods({
@@ -27,10 +29,12 @@ export default function BaazaarSidebar({loadBaazaarGoods, defaultGoodsType, defa
 
     const onTypeChange = (event) => {
         setType(event.target.value);
+        setSelectedGoodsType(event.target.value);
     };
 
     const onSortByChange = (event) => {
         setOrdering(event.target.value);
+        setSortingOrder(event.target.value);
     };
 
     return (

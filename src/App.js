@@ -17,6 +17,7 @@ import CountdownTest from './pages/CountdownTest/CountdownTest';
 import Client from './pages/Client/Client';
 import Raffle from './pages/Raffle/Raffle';
 import NotFound from './pages/NotFound/NotFound';
+import BaazaarContextProvider from "./contexts/BaazaarContext";
 
 const useStyles = makeStyles(() => ({
     wrap: {
@@ -43,6 +44,7 @@ export default function App() {
 
     return (
         <SnackbarContextProvider>
+            <BaazaarContextProvider>
             <Helmet>
                 <title>ghst_gg</title>
             </Helmet>
@@ -65,6 +67,7 @@ export default function App() {
                 </Grid>
                 {location.pathname !== '/explorer' && <Footer />}
             </Grid>
+            </BaazaarContextProvider>
         </SnackbarContextProvider>
     );
 }

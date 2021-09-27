@@ -27,6 +27,64 @@ export const gotchiesQuery = (skip, orderDir) => {
     }`
 };
 
+export const portalListingQuery = (skip, orderDir) => {
+    return `{
+        aavegotchis(
+          first: 1000,
+          skip: ${skip},
+          orderBy: id,
+          orderDirection: ${orderDir},
+          where: {status: 3, owner_not: "0x0000000000000000000000000000000000000000"}
+        ) {
+          id
+          name
+          withSetsNumericTraits
+          numericTraits
+          baseRarityScore
+          modifiedRarityScore
+          withSetsRarityScore
+          kinship
+          level
+          experience
+          equippedWearables
+          collateral
+          hauntId
+          owner {
+            id
+          }
+        }
+    }`
+};
+
+export const gotchiListingQuery = (skip, orderDir) => {
+    return `{
+        aavegotchis(
+          first: 1000,
+          skip: ${skip},
+          orderBy: id,
+          orderDirection: ${orderDir},
+          where: {status: 3, owner_not: "0x0000000000000000000000000000000000000000"}
+        ) {
+          id
+          name
+          withSetsNumericTraits
+          numericTraits
+          baseRarityScore
+          modifiedRarityScore
+          withSetsRarityScore
+          kinship
+          level
+          experience
+          equippedWearables
+          collateral
+          hauntId
+          owner {
+            id
+          }
+        }
+    }`
+};
+
 export const userQuery = (id) => {
     return `{
         user(id: "${id}") {
