@@ -61,6 +61,7 @@ export default function Baazaar() {
         let paramsWithLimit;
 
         setGoods([]);
+        setSelectedLocalGoods([]);
         setResultsForType(selectedGoodsType);
 
         if (validParams) {
@@ -329,7 +330,7 @@ export default function Baazaar() {
                 return web3.utils.fromWei(a.priceInWei) - web3.utils.fromWei(b.priceInWei);
             } else if (sortingOrder === orderingTypes.priceDESC) {
                 return web3.utils.fromWei(b.priceInWei) - web3.utils.fromWei(a.priceInWei);
-            } else if (sortingOrder === orderingTypes.timeDESC) {
+            } else if (sortingOrder === orderingTypes.timeASC) {
                 return parseInt(a.timeCreated) - parseInt(b.timeCreated);
             } else {
                 return parseInt(b.timeCreated) - parseInt(a.timeCreated);
