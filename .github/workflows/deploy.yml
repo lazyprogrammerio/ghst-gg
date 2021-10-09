@@ -13,6 +13,9 @@ jobs:
         env:
           IMAGE_NAME: gcr.io/ghst-gg-client/client
         steps:
+        
+        - name: Checkout
+          uses: actions/checkout@v2
 
         - name: Login
           uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
