@@ -6,7 +6,7 @@ on:
 name: Test Deploy
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  SERVICE: ${{ secrets.GCP_SA_EMAIL }}
+  SERVICE: github-action-deploy
   REGION: europe-west1
 
 jobs:
