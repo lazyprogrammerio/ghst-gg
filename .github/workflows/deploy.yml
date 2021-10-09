@@ -1,26 +1,22 @@
+name: Test Deploy
+
 on:
   push:
-    branches:
-    - 'test-action-deploy'
-
-name: Test Deploy
-env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  SERVICE: github-deploy
-  REGION: europe-west1
-
+    branches: [ test-action-deploy ]
+  
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
 
-    - name: Setup Cloud SDK
-      uses: google-github-actions/setup-gcloud@v0.2.0
-      with:
-        project_id: ${{ secrets.PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
+    deploy:
 
-    - name: Use gcloud CLI
-      run: gcloud info
+        name: Setup Gcloud Account
+        runs-on: ubuntu-latest
+        env:
+          IMAGE_NAME: gcr.io/ghst-gg-client/client
+        steps:
+
+        - name: Login
+          uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+          with:
+            project_id: ${{ secrets.GCP_PROJECT }}
+            service_account_email: ${{ secrets.GCP_EMAIL }}
+            service_account_key: ${{ secrets.GCP_SA_KEY }}
