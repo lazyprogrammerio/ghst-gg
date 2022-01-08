@@ -48,7 +48,7 @@ export default function App() {
                     <ClientContextProvider>
 
                         <Helmet>
-                            <title>ghst_gg gotchiverse client</title>
+                            <title>aavegotchi.land</title>
                         </Helmet>
 
                         <Wrapper className={classes.wrapper}>

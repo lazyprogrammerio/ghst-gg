@@ -43,27 +43,18 @@ export default function Header() {
     const renderSocials = (view) => {
         return (
             <Box className={classNames(classes.socialLinkList, view)} >
-                <Link href='https://discord.gg/NXEEETxSkC' className={classes.socialLink} target='_blank' underline='none'>
-                    <Button className={classes.iconButton} aria-label='add an alarm'>
-                        <img src={ discord } alt='' />
-                        <Box component='span' className={classes.iconButtonText}>435</Box>
-                    </Button>
-                </Link>
-                <Link href='https://twitter.com/orden_gg' className={classes.socialLink} target='_blank' underline='none'>
+                <Link href='https://twitter.com/firstaavegotchi' className={classes.socialLink} target='_blank' underline='none'>
                     <Button className={classes.iconButton} aria-label='add an alarm'>
                         <TwitterIcon />
-                        <Box component='span' className={classes.iconButtonText}>965</Box>
+                        <Box component='span' className={classes.iconButtonText}>79</Box>
                     </Button>
                 </Link>
-                <Link href='https://github.com/orden-gg/ghst-gg' className={classes.socialLink} target='_blank' underline='none'>
+                <Link href='https://github.com/lazyprogrammerio/ghst-gg' className={classes.socialLink} target='_blank' underline='none'>
                     <Button className={classes.iconButton} aria-label='add an alarm'>
                         <img src={ github } alt='' />
-                        <Box component='span' className={classes.iconButtonText}>10</Box>
+                        <Box component='span' className={classes.iconButtonText}>1</Box>
                     </Button>
                 </Link>
-                <Box className={classes.socialLinkJoin}>
-                    <Typography variant={'caption'}>Join our community!</Typography>
-                </Box>
             </Box>
         )
     };

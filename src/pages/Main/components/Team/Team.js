@@ -10,7 +10,7 @@ import GotchiSvg from '../../../../components/Gotchi/GotchiSvg';
 import Subtitle from '../../../../components/Subtitle/Subtitle';
 import { Box } from '@mui/system';
 
-const gotchiesId = [4271, 8005, 4282, 23470, 13998];
+const gotchiesId = [7005, 9250, 2544, 3572, 9215, ];
 
 export default function Team() {
     const classes = styles();
@@ -41,7 +41,7 @@ export default function Team() {
             <Grid container justifyContent='center'>
                 <Grid item xs={12} md={10}>
                     <Subtitle variant='h4' innerBg='rgb(39, 42, 48)' margin='0 0 40px'>
-                        orden DAO
+                        Unicorn DAO
                     </Subtitle>
                 </Grid>
             </Grid>
