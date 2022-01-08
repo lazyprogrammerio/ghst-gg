@@ -75,7 +75,7 @@ export default function Header() {
             </NavLink>
             <Box className={classNames(classes.navWrapper, navOpen ? 'opened' : 'closed')} ref={navRef}>
                 <nav className={classes.navigation}>
-                    <NavLink className={classes.navLink} to='/client'>
+                    {/*NavLink className={classes.navLink} to='/client'>
                         <Box className={classes.navLinkBox}>
                             Client
                             <Typography variant={'caption'}>Beta</Typography>
