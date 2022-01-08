@@ -92,9 +92,12 @@ export default function Header() {
                     </NavLink>
                     {/* <NavLink className={classes.navLink} to='/guilds'>
                         Guilds
-                    </NavLink> */}
+                    </NavLink>
                     <NavLink className={classes.navLink} to='/raffle-calculator'>
                         Raffle Calculator
+                    </NavLink> */}
+                    <NavLink className={classes.navLink} to='/land'>
+                        Land
                     </NavLink>
                 </nav>
                 {renderSocials('mobile')}
