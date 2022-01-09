@@ -42,6 +42,8 @@ export default function ClientGotchis() {
                                         ]
                                     },
 				    'svg',
+					'numericTraits',
+					'modifiedNnumericTraits',
                                     'name',
                                 ]}
                             />

@@ -15,7 +15,7 @@ const ClientContextProvider = (props) => {
     const [loadingGotchis, setLoadingGotchis] = useState(true);
 
     const [mythicalGotchis, setMythicalGotchis] = useState([]);
-    const [mythicalGotchisFilter, setMythicalGotchisFilter] = useState('modifiedRarityScore');
+    const [mythicalGotchisFilter, setMythicalGotchisFilter] = useState('created_at');
     const [loadingMythicalGotchis, setLoadingMythicalGotchis] = useState(true);
 
     const [warehouse, setWarehouse] = useState([]);
@@ -142,7 +142,8 @@ const ClientContextProvider = (props) => {
 
         thegraph.getDoubleMythGotchiesData(address).then((response)=> {
 
-            setMythicalGotchis(response);
+            let [gFilter, gDir] = getFilter(mythicalGotchisFilter);
+            setMythicalGotchis(commonUtils.basicSort(response, gFilter, gDir));
 		console.log(response)
             setLoadingMythicalGotchis(false);
         }).catch((error) => {

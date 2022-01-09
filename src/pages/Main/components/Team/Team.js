@@ -55,7 +55,7 @@ export default function Team() {
                         {
                             members.map( (gotchi, index) => (
                                 <Grid item xs={6} sm={4} md={2} key={index}>
-                                    <Link href={`https://www.aavegotchi.com/gotchi/${gotchi.id}`} target='_blank' className={classes.teamMember} underline='none'>
+                                    <Link href={`https://aavegotchi.com/gotchi/${gotchi.id}`} target='_blank' className={classes.teamMember} underline='none'>
                                         <Typography className={classes.aavegotchiName} variant='h3'>{gotchi.name}</Typography>
                                         <GotchiSvg id={gotchi.id} size={107} hideWareables={false} />
                                     </Link>
