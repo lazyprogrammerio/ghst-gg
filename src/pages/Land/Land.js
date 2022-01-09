@@ -90,7 +90,7 @@ export default function Client() {
                         <Route path={`${match.path}/tickets`} component={ ClientTickets } />
                         <Route path={`${match.path}/realm`} component={ ClientRealm } />
                         <Route path={`${match.path}/info`} component={ ClientInfo } />
-                        <Redirect from={match.path} to={`${match.path}/gotchis`} />
+                        <Redirect from={match.path} to={`${match.path}/info`} />
                     </Switch>
                 </>
             )}

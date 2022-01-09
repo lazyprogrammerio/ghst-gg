@@ -14,6 +14,21 @@ const raffle = 'https://api.thegraph.com/subgraphs/name/froid1911/aavegotchi-raf
 const gotchiSVGs = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-svg';
 const realm = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-realm-matic';
 
+const aavegotchiLand = 'https://api.aavegotchi.land/address_info?address=0x47d6f96ba098816389db7c87cbf077de7181b853'
+
+var requestExt = require('request-extensible');
+var RequestHttpCache = require('request-http-cache');
+ 
+var httpRequestCache = new RequestHttpCache({
+	  max: 1024*1024 // Maximum cache size (1mb) defaults to 512Kb
+});
+ 
+var request = requestExt({
+	  extensions: [
+		      httpRequestCache.extension
+		    ]
+});
+
 const clientFactory = (() => {
     const createClient = (url) => {
         return new ApolloClient({
@@ -26,7 +41,8 @@ const clientFactory = (() => {
         client: createClient(baseUrl),
         raffleClient: createClient(raffle),
         svgsClient: createClient(gotchiSVGs),
-        realmClient: createClient(realm)
+        realmClient: createClient(realm),
+        aavegotchiLandClient: createClient(aavegotchiLand)
     }
 })();
 
@@ -35,6 +51,16 @@ const getGraphData = async (client, query) => {
     try {
         return await client.query({
             query: gql`${query}`
+        });
+    } catch (error) {
+        console.error(error);
+        return []
+    }
+};
+
+const getApiData = async (client) => {
+    try {
+        return await client.query({
         });
     } catch (error) {
         console.error(error);
@@ -216,6 +242,10 @@ export default {
 
     async getRaffleData(query) {
         return await getGraphData(clientFactory.raffleClient, query);
+    },
+
+    async getAddressInfoData(address) {
+        return await getApiData(clientFactory.aavegotchiLandClient, address);
     },
 
     async getRaffle(id) {

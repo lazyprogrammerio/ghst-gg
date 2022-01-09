@@ -31,13 +31,14 @@ const ClientContextProvider = (props) => {
 
     const [addressInfo, setAddressInfo] = useState([]);
     const [addressInfoFilter, setAddressInfoFilter] = useState('rarityIdDesc');
-    const [loadingAddressInfo, setLoadingAddressInfoe] = useState(false);
+    const [loadingAddressInfo, setLoadingAddressInfo] = useState(false);
 
     const getClientData = () => {
         getGotchis(clientActive);
         getInventory(clientActive);
         getTickets(clientActive);
         getRealm(clientActive);
+        getInfo(clientActive);
 
         // reset
         setWarehouse([]);
@@ -195,6 +196,15 @@ const ClientContextProvider = (props) => {
             setRealm([]);
             setLoadingRealm(false);
         });
+    };
+
+    const getInfo = (address) => {
+        setLoadingAddressInfo(true);
+        setAddressInfo(['test info']);
+        setLoadingAddressInfo(false);
+        thegraph.getAddressInfoData().then((response) => {
+	  console.log(response)
+	})
     };
 
     const calculateReward = () => {
