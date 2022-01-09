@@ -9,6 +9,7 @@ import { ClientContext } from '../../../contexts/ClientContext';
 
 import gotchiPlaceholder from '../../../assets/images/gotchi-placeholder.svg';
 import warehousePlaceholder from '../../../assets/wearables/15.svg';
+import infoPlaceholder from '../../../assets/wearables/traits.svg';
 import ticketsPlaceholder from '../../../assets/tickets/rare.svg';
 import realmPlaceholder from '../../../assets/images/icons/kek.png';
 import ContentLoader from 'react-content-loader';
@@ -34,7 +35,7 @@ export default function ClientNav() {
             <Button
                 disabled={!addressInfo.length}
                 startIcon={
-                    <img src={warehousePlaceholder} alt='gotchi' width={25} />
+                    <img src={infoPlaceholder} alt='gotchi' width={25} />
                 }
                 component={NavLink}
                 className={classes.button}
