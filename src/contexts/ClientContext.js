@@ -140,12 +140,10 @@ const ClientContextProvider = (props) => {
     const getMythicalGotchis = (address) => {
         setLoadingMythicalGotchis(true);
 
-        thegraph.getGotchisByAddress(address).then((response)=> {
-            let wearables = [];
-            let [gFilter, gDir] = getFilter(gotchisFilter);
-            let [wFilter, wDir] = getFilter(warehouseFilter);
+        thegraph.getDoubleMythGotchiesData(address).then((response)=> {
 
-            setMythicalGotchis(commonUtils.basicSort(response, gFilter, gDir));
+            setMythicalGotchis(response);
+		console.log(response)
             setLoadingMythicalGotchis(false);
         }).catch((error) => {
             console.log(error);
