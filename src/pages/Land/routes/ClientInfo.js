@@ -17,7 +17,7 @@ export default function ClientRealm() {
     const classes = routersStyles();
     const { addressInfo, addressInfoFilter, loadingAddressInfo, sortData } = useContext(ClientContext);
    
-    if(loadingAddressInfo || !addressInfo.length) {
+    if(loadingAddressInfo || !addressInfo) {
         return <Box  className={classes.loaderBox}>
             <GhostLoader
                 animate={loadingAddressInfo || !addressInfo}
@@ -30,11 +30,19 @@ export default function ClientRealm() {
         <>
             <Box className={classes.sortWrapper}>
                 <Box className={classes.sortInner}>
-                    <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>Some Data</Typography>
+                    <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>Aggregated Gotchies XP: { addressInfo.gotchies_xp } </Typography>
                 </Box>
 
                 <Box className={classes.sortInner}>
-                    <Typography variant='subtitle1' className={classes.sortText}>Other Data </Typography>
+                    <Typography variant='subtitle1' className={classes.sortText}>Average Gotchies XP: {addressInfo.gotchies_medium_xp } </Typography>
+                </Box>
+
+                <Box className={classes.sortInner}>
+                    <Typography variant='subtitle1' className={classes.sortText}>Aggregated Gotchies Kinship: {addressInfo.gotchies_kinship } </Typography>
+                </Box>
+
+                <Box className={classes.sortInner}>
+                    <Typography variant='subtitle1' className={classes.sortText}>Average Gotchies Kinship: {addressInfo.gotchies_medium_kinship } </Typography>
                 </Box>
             </Box>
 

@@ -33,7 +33,7 @@ export default function ClientNav() {
     return (
         <div className={classes.container}>
             <Button
-                disabled={!addressInfo.length}
+                disabled={!addressInfo}
                 startIcon={
                     <img src={infoPlaceholder} alt='gotchi' width={25} />
                 }

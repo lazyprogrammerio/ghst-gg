@@ -201,7 +201,11 @@ const ClientContextProvider = (props) => {
     const getInfo = (address) => {
         setLoadingAddressInfo(true);
         thegraph.getAddressInfoData(address).then((response) => {
-          setAddressInfo(response)
+          if (response && !response.error) {
+            setAddressInfo(response)
+          } else {
+	    setAddressInfo(null)
+	  }
           setLoadingAddressInfo(false);
 	})
     };
