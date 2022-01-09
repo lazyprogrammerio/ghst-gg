@@ -62,7 +62,7 @@ export default function App() {
                                     <Route path={`/guilds`} component={ Guilds } />
                                     <Route path={`/client`} component={ Client } />
                                     <Route path={`/raffle-calculator`} component={ Raffle } />
-                                    <Route path={`/land`} component={ Land } />
+                                    <Route path={`/gotchiverse`} component={ Land } />
                                     <Route exact path={`/404`} component={ NotFound } />
                                     <Redirect from='*' to='/404' />
                                 </Switch>

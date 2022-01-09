@@ -42,7 +42,7 @@ export default function ClientNav() {
                 activeClassName='active'
                 to={{ pathname: `${match.url}/info`, search: `?address=${clientActive}` }}
             >
-                Info
+                Analytics
                 {
                     loadingGotchis || loadingWarehouse || loadingAddressInfo ? (
                         <ContentLoader
