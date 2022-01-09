@@ -14,6 +14,10 @@ const ClientContextProvider = (props) => {
     const [gotchisFilter, setGotchisFilter] = useState('modifiedRarityScore');
     const [loadingGotchis, setLoadingGotchis] = useState(true);
 
+    const [mythicalGotchis, setMythicalGotchis] = useState([]);
+    const [mythicalGotchisFilter, setMythicalGotchisFilter] = useState('modifiedRarityScore');
+    const [loadingMythicalGotchis, setLoadingMythicalGotchis] = useState(true);
+
     const [warehouse, setWarehouse] = useState([]);
     const [warehouseFilter, setWarehouseFilter] = useState('rarityIdDesc');
     const [loadingWarehouse, setLoadingWarehouse] = useState(false);
@@ -35,6 +39,7 @@ const ClientContextProvider = (props) => {
 
     const getClientData = () => {
         getGotchis(clientActive);
+        getMythicalGotchis(clientActive);
         getInventory(clientActive);
         getTickets(clientActive);
         getRealm(clientActive);
@@ -124,6 +129,24 @@ const ClientContextProvider = (props) => {
 
             setGotchis(commonUtils.basicSort(response, gFilter, gDir));
             setLoadingGotchis(false);
+        }).catch((error) => {
+            console.log(error);
+            setGotchis([]);
+            setLoadingGotchis(false);
+        });
+    };
+
+
+    const getMythicalGotchis = (address) => {
+        setLoadingMythicalGotchis(true);
+
+        thegraph.getGotchisByAddress(address).then((response)=> {
+            let wearables = [];
+            let [gFilter, gDir] = getFilter(gotchisFilter);
+            let [wFilter, wDir] = getFilter(warehouseFilter);
+
+            setMythicalGotchis(commonUtils.basicSort(response, gFilter, gDir));
+            setLoadingMythicalGotchis(false);
         }).catch((error) => {
             console.log(error);
             setGotchis([]);
@@ -251,6 +274,11 @@ const ClientContextProvider = (props) => {
             gotchisFilter,
             loadingGotchis,
             setGotchis,
+
+            mythicalGotchis,
+            mythicalGotchisFilter,
+            loadingMythicalGotchis,
+            setMythicalGotchis,
 
             addressInfo,
             addressInfoFilter,
