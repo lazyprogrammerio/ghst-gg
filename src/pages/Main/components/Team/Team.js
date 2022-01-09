@@ -41,7 +41,7 @@ export default function Team() {
             <Grid container justifyContent='center'>
                 <Grid item xs={12} md={10}>
                     <Subtitle variant='h4' innerBg='rgb(39, 42, 48)' margin='0 0 40px'>
-                        Unicorn DAO
+                        UNI Gotchies DAO
                     </Subtitle>
                 </Grid>
             </Grid>
