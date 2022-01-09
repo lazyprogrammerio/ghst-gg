@@ -29,6 +29,10 @@ const ClientContextProvider = (props) => {
     const [rewardCalculating, setRewardCalculating] = useState(false);
     const [rewardCalculated, setRewardCalculated] = useState(false);
 
+    const [addressInfo, setAddressInfo] = useState([]);
+    const [addressInfoFilter, setAddressInfoFilter] = useState('rarityIdDesc');
+    const [loadingAddressInfo, setLoadingAddressInfoe] = useState(false);
+
     const getClientData = () => {
         getGotchis(clientActive);
         getInventory(clientActive);
@@ -234,6 +238,11 @@ const ClientContextProvider = (props) => {
             gotchisFilter,
             loadingGotchis,
             setGotchis,
+
+            addressInfo,
+            addressInfoFilter,
+            loadingAddressInfo,
+            setAddressInfo,
 
             warehouse,
             warehouseFilter,

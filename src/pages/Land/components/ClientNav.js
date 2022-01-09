@@ -25,12 +25,41 @@ export default function ClientNav() {
         gotchis, loadingGotchis,
         warehouse, loadingWarehouse,
         tickets, loadingTickets,
-        realm, loadingRealm
+        realm, loadingRealm,
+	addressInfo, loadingAddressInfo
      } = useContext(ClientContext);
 
     return (
         <div className={classes.container}>
             <Button
+                disabled={!addressInfo.length}
+                startIcon={
+                    <img src={warehousePlaceholder} alt='gotchi' width={25} />
+                }
+                component={NavLink}
+                className={classes.button}
+                activeClassName='active'
+                to={{ pathname: `${match.url}/info`, search: `?address=${clientActive}` }}
+            >
+                Info
+                {
+                    loadingGotchis || loadingWarehouse || loadingAddressInfo ? (
+                        <ContentLoader
+                            speed={2}
+                            viewBox='0 0 28 14'
+                            backgroundColor={theme.palette.secondary.main}
+                            foregroundColor={theme.palette.primary.dark}
+                            className={classes.buttonLoader}
+                        >
+                            <rect x='0' y='0' width='28' height='14' />
+                        </ContentLoader>
+                    ) : (
+                        <span className={classes.label}></span>
+                    )
+                }
+            </Button>
+
+	    <Button
                 disabled={!gotchis.length}
                 startIcon={
                     <img src={gotchiPlaceholder} alt='gotchi' width={24} height={24} />
