@@ -20,7 +20,7 @@ export default function Footer() {
                 <div>
                     <span className={classes.highlight}>v0.31</span>
                     <span className={classes.footerCopyright}>
-                        aavegotchi.land is the <a href='https://github.com/lazyprogrammerio/ghst-gg' rel='noreferrer' target='_blank'>open-source</a>, <a href='https://www.aavegotchi.com/' rel='noreferrer' target='_blank'>gotchiverse</a> unicorn friendly client. Developed by <a href='https://twitter.com/orden_gg' rel='noreferrer' target='_blank'>ordenGG</a>, lazyprogrammer {'&'} contributors.
+                        aavegotchi.land is the <a href='https://github.com/lazyprogrammerio/ghst-gg' rel='noreferrer' target='_blank'>open-source</a>, <a href='https://www.aavegotchi.com/' rel='noreferrer' target='_blank'>gotchiverse</a> unicorn friendly client. Developed by <a href='https://twitter.com/orden_gg' rel='noreferrer' target='_blank'>ordenGG</a>, <a href='https://twitter.com/firstaavegotchi' rel='noreferrer' target='_blank'>firstaavegotchi</a> {'&'} contributors.
                     </span>
                 </div>
                 <div className={classes.buttons}>
