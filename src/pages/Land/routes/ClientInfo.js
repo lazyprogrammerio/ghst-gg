@@ -28,26 +28,22 @@ export default function ClientRealm() {
 
     return (
         <>
-            <Box className={classes.sortWrapper}>
-                <Box className={classes.sortInner}>
-                    <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>Gotchies estimated value: { parseInt(addressInfo.all_gotchies_estimated_price)} GHST</Typography>
-                </Box>
-
-                <Box className={classes.sortInner}>
+            <Box className={classes.list}>
+              <div className={classes.listItem}>
+                <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>Gotchies estimated value: { parseInt(addressInfo.all_gotchies_estimated_price)} GHST</Typography>
+               </div>
+              <div className={classes.listItem}>
                     <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>Items estimated value: { parseInt(addressInfo.all_items_estimated_price)} GHST</Typography>
-                </Box>
-
-                <Box className={classes.sortInner}>
+               </div>
+              <div className={classes.listItem}>
                     <Typography variant='subtitle1' sx={{ marginRight: '12px' }}>All gotchies XP: { addressInfo.gotchies_xp } ({addressInfo.gotchies_medium_xp}/gotchi)</Typography>
-                </Box>
-
-                <Box className={classes.sortInner}>
+               </div>
+              <div className={classes.listItem}>
                     <Typography variant='subtitle1' className={classes.sortText}>All gotchies Kinship: {addressInfo.gotchies_kinship } ({addressInfo.gotchies_medium_kinship}/gotchi)</Typography>
-                </Box>
-
-                <Box className={classes.sortInner}>
+               </div>
+              <div className={classes.listItem}>
                     <Typography variant='subtitle1' className={classes.sortText}>Gotchies estimated reward: {parseInt(4 * addressInfo.estimated_full_payment_first_round) } GHST</Typography>
-                </Box>
+               </div>
             </Box>
 
         </>
