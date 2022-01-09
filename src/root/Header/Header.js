@@ -9,7 +9,7 @@ import LoginButton from '../../components/Login/LoginButton';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import logo from '../../assets/images/logo.svg';
+import logo from '../../assets/images/logo.gif';
 import discord from '../../assets/images/discord.svg';
 import github from '../../assets/images/github.png';
 
