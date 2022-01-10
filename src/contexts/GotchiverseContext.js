@@ -11,8 +11,13 @@ const ClientContextProvider = (props) => {
     const [mythicalGotchisFilter, ] = useState('created_at');
     const [loadingMythicalGotchis, setLoadingMythicalGotchis] = useState(true);
 
+    const [uniqueGotchis, setUniqueGotchis] = useState([]);
+    const [uniqueGotchisFilter, ] = useState('created_at');
+    const [loadingUniqueGotchis, setLoadingUniqueGotchis] = useState(true);
+
     const getClientData = () => {
         getMythicalGotchis(clientActive);
+        getUniqueGotchis(clientActive);
     };
 
     const getFilter = (filter) => {
@@ -30,6 +35,22 @@ const ClientContextProvider = (props) => {
     }
 
     const sortData = (event, newFilter, setter) => {
+    };
+
+    const getUniqueGotchis = (address) => {
+        setLoadingUniqueGotchis(true);
+
+        thegraph.getDoubleMythGotchiesData(address).then((response)=> {
+
+            let [gFilter, gDir] = getFilter(uniqueGotchisFilter);
+            setUniqueGotchis(commonUtils.basicSort(response, gFilter, gDir));
+		console.log(response)
+            setLoadingUniqueGotchis(false);
+        }).catch((error) => {
+            console.log(error);
+            setUniqueGotchis([]);
+            setLoadingUniqueGotchis(false);
+        });
     };
 
     const getMythicalGotchis = (address) => {
@@ -57,6 +78,11 @@ const ClientContextProvider = (props) => {
             mythicalGotchisFilter,
             loadingMythicalGotchis,
             setMythicalGotchis,
+
+            uniqueGotchis,
+            uniqueGotchisFilter,
+            loadingUniqueGotchis,
+            setUniqueGotchis,
 
             getClientData,
             sortData
