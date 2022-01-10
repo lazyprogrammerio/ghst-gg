@@ -87,6 +87,9 @@ export default function Header() {
                     <NavLink className={classes.navLink} to='/raffle-calculator'>
                         Raffle Calculator
                     </NavLink> */}
+                    <NavLink className={classes.navLink} to='/dashboard'>
+                      Dashboard
+                    </NavLink>
                     <NavLink className={classes.navLink} to='/gotchiverse'>
                       GotchiVerse
                     </NavLink>

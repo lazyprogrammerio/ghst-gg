@@ -82,6 +82,8 @@ export default function Client() {
                 </Box>
             ) : (
                 <>
+                    <ProfilePane address={clientActive} />
+
                     <ClientNav />
                     <Switch>
                         <Route path={`${match.path}/gotchis`} component={ ClientGotchis } />
@@ -90,7 +92,7 @@ export default function Client() {
                         <Route path={`${match.path}/tickets`} component={ ClientTickets } />
                         <Route path={`${match.path}/realm`} component={ ClientRealm } />
                         <Route path={`${match.path}/info`} component={ ClientInfo } />
-                        <Redirect from={match.path} to={`${match.path}/mythical-gotchis`} />
+                        <Redirect from={match.path} to={`${match.path}/info`} />
                     </Switch>
                 </>
             )}

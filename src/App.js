@@ -14,6 +14,7 @@ import GhostExplorer from './pages/GhostExplorer/GhostExplorer';
 import Guilds from './pages/Guilds/Guilds';
 import Client from './pages/Client/Client';
 import Land from './pages/Land/Land';
+import Dash from './pages/Dash/Land';
 import Raffle from './pages/Raffle/Raffle';
 import NotFound from './pages/NotFound/NotFound';
 import BaazaarContextProvider from "./contexts/BaazaarContext";
@@ -62,6 +63,7 @@ export default function App() {
                                     <Route path={`/guilds`} component={ Guilds } />
                                     <Route path={`/client`} component={ Client } />
                                     <Route path={`/raffle-calculator`} component={ Raffle } />
+                                    <Route path={`/dashboard`} component={ Dash } />
                                     <Route path={`/gotchiverse`} component={ Land } />
                                     <Route exact path={`/404`} component={ NotFound } />
                                     <Redirect from='*' to='/404' />
