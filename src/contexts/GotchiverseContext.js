@@ -15,9 +15,14 @@ const ClientContextProvider = (props) => {
     const [uniqueGotchisFilter, ] = useState('created_at');
     const [loadingUniqueGotchis, setLoadingUniqueGotchis] = useState(true);
 
+    const [godlikeGotchis, setGodlikeGotchis] = useState([]);
+    const [godlikeGotchisFilter, ] = useState('created_at');
+    const [loadingGodlikeGotchis, setLoadingGodlikeGotchis] = useState(true);
+
     const getClientData = () => {
         getMythicalGotchis(clientActive);
         getUniqueGotchis(clientActive);
+        getGodlikeGotchis(clientActive);
     };
 
     const getFilter = (filter) => {
@@ -35,6 +40,23 @@ const ClientContextProvider = (props) => {
     }
 
     const sortData = (event, newFilter, setter) => {
+    };
+
+
+    const getGodlikeGotchis = (address) => {
+        setLoadingGodlikeGotchis(true);
+
+        thegraph.getGodlikeGotchiesData(address).then((response)=> {
+
+            let [gFilter, gDir] = getFilter(godlikeGotchisFilter);
+            setGodlikeGotchis(commonUtils.basicSort(response, gFilter, gDir));
+		console.log(response)
+            setLoadingGodlikeGotchis(false);
+        }).catch((error) => {
+            console.log(error);
+            setUniqueGotchis([]);
+            setLoadingUniqueGotchis(false);
+        });
     };
 
     const getUniqueGotchis = (address) => {
@@ -83,6 +105,11 @@ const ClientContextProvider = (props) => {
             uniqueGotchisFilter,
             loadingUniqueGotchis,
             setUniqueGotchis,
+
+            godlikeGotchis,
+            godlikeGotchisFilter,
+            loadingGodlikeGotchis,
+            setGodlikeGotchis,
 
             getClientData,
             sortData

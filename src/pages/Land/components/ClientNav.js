@@ -25,6 +25,7 @@ export default function ClientNav() {
         clientActive,
         mythicalGotchis, loadingMythicalGotchis,
         uniqueGotchis, loadingUniqueGotchis,
+        godlikeGotchis, loadingGodlikeGotchis,
      } = useContext(ClientContext);
 
     return (
@@ -80,6 +81,33 @@ export default function ClientNav() {
                         </ContentLoader>
                     ) : (
                         <span className={classes.label}>[{uniqueGotchis.length}]</span>
+                    )
+                }
+            </Button>
+	    <Button
+                disabled={!godlikeGotchis.length}
+                startIcon={
+                    <img src={gotchiPlaceholder} alt='gotchi' width={24} height={24} />
+                }
+                component={NavLink}
+                className={classes.button}
+                activeClassName='active'
+                to={{ pathname: `${match.url}/godlike-gotchis` }}
+            >
+                Godlike BRS
+                {
+                    loadingGodlikeGotchis ? (
+                        <ContentLoader
+                            speed={2}
+                            viewBox='0 0 28 14'
+                            backgroundColor={theme.palette.secondary.main}
+                            foregroundColor={theme.palette.primary.dark}
+                            className={classes.buttonLoader}
+                        >
+                            <rect x='0' y='0' width='28' height='14' />
+                        </ContentLoader>
+                    ) : (
+                        <span className={classes.label}>[{godlikeGotchis.length}]</span>
                     )
                 }
             </Button>

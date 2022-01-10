@@ -15,6 +15,7 @@ import LoginNavigation from '../../components/Login/LoginNavigation';
 import ClientNav from './components/ClientNav';
 import ClientGotchisMythical from './routes/ClientGotchisDoubleMythicalEyes';
 import ClientGotchisUnique from './routes/ClientGotchisUnique';
+import ClientGotchisGodlike from './routes/ClientGotchisGodlike';
 
 export default function Client() {
     const classes = styles();
@@ -77,6 +78,7 @@ export default function Client() {
                     <Switch>
                         <Route path={`${match.path}/mythical-gotchis`} component={ ClientGotchisMythical } />
                         <Route path={`${match.path}/unique-gotchis`} component={ ClientGotchisUnique } />
+                        <Route path={`${match.path}/godlike-gotchis`} component={ ClientGotchisGodlike } />
                         <Redirect from={match.path} to={`${match.path}/mythical-gotchis`} />
                     </Switch>
                 </>
