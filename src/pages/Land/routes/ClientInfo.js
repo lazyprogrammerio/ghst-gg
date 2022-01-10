@@ -1,21 +1,15 @@
 import React, { useContext } from 'react';
-import { Box, Typography, ToggleButtonGroup, ToggleButton, Tooltip  } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { routersStyles } from '../styles';
 
 import { ClientContext } from '../../../contexts/ClientContext';
 
-import Parcel from '../../../components/Items/Parcel/Parcel';
-
-import fud from '../../../assets/images/icons/fud.png';
-import fomo from '../../../assets/images/icons/fomo.png';
-import alpha from '../../../assets/images/icons/alpha.png';
-import kek from '../../../assets/images/icons/kek.png';
 import GhostLoader from '../../../components/GhostLoader/GhostLoader';
 
 export default function ClientRealm() {
     const classes = routersStyles();
-    const { addressInfo, addressInfoFilter, loadingAddressInfo, sortData } = useContext(ClientContext);
+    const { addressInfo, loadingAddressInfo } = useContext(ClientContext);
    
     if(loadingAddressInfo || !addressInfo) {
         return <Box  className={classes.loaderBox}>

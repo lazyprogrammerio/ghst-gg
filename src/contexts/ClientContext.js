@@ -30,7 +30,7 @@ const ClientContextProvider = (props) => {
     const [rewardCalculated, setRewardCalculated] = useState(false);
 
     const [addressInfo, setAddressInfo] = useState([]);
-    const [addressInfoFilter, setAddressInfoFilter] = useState('rarityIdDesc');
+    const [addressInfoFilter, ] = useState('rarityIdDesc');
     const [loadingAddressInfo, setLoadingAddressInfo] = useState(false);
 
     const getClientData = () => {

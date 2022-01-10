@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import { Box, Button, Link, Toolbar, Typography, IconButton } from '@mui/material';
+import { Box, Button, Link, Toolbar, IconButton } from '@mui/material';
 import {NavLink, useLocation} from 'react-router-dom';
 import classNames from 'classnames';
 import styles from './styles';
@@ -10,7 +10,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import logo from '../../assets/images/logo.gif';
-import discord from '../../assets/images/discord.svg';
 import github from '../../assets/images/github.png';
 
 export default function Header() {

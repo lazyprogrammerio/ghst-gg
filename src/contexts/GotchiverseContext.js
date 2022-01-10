@@ -1,9 +1,6 @@
 import React, {createContext, useState} from 'react';
 import thegraph from '../api/thegraph';
-import web3 from '../api/web3';
 import commonUtils from '../utils/commonUtils';
-import graphUtils from '../utils/graphUtils';
-import itemUtils from '../utils/itemUtils';
 
 export const ClientContext = createContext({});
 
@@ -11,7 +8,7 @@ const ClientContextProvider = (props) => {
     const [clientActive, setClientActive] = useState(null);
 
     const [mythicalGotchis, setMythicalGotchis] = useState([]);
-    const [mythicalGotchisFilter, setMythicalGotchisFilter] = useState('created_at');
+    const [mythicalGotchisFilter, ] = useState('created_at');
     const [loadingMythicalGotchis, setLoadingMythicalGotchis] = useState(true);
 
     const getClientData = () => {
@@ -33,8 +30,6 @@ const ClientContextProvider = (props) => {
     }
 
     const sortData = (event, newFilter, setter) => {
-        let [filter, dir] = getFilter(newFilter);
-
     };
 
     const getMythicalGotchis = (address) => {

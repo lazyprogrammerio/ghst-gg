@@ -4,7 +4,7 @@ import guilds from '../data/guilds';
 export const GuildsContext = createContext({});
 
 const GuildsContextProvider = (props) => {
-    const [ guildsData, setGuildsData ] = useState(guilds);
+    const [ guildsData ] = useState(guilds);
     const [ currentGuild, setCurrentGuild ] = useState([]);
 
     const [ guildGotchis, setGuildGotchis ] = useState([]);

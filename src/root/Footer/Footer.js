@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { Box, Toolbar, Snackbar, Alert, Button, Link } from '@mui/material';
+import { Box, Toolbar, Snackbar, Alert } from '@mui/material';
 
 import { SnackbarContext } from '../../contexts/SnackbarContext';
-import MusicButton from '../../components/MusicButton/MusicButton';
 
 import styles from './styles';
 

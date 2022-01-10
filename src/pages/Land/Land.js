@@ -12,7 +12,6 @@ import { LoginContext } from '../../contexts/LoginContext';
 import { ClientContext } from '../../contexts/GotchiverseContext';
 
 import LoginNavigation from '../../components/Login/LoginNavigation';
-import ProfilePane from '../../components/ProfilePane/ProfilePane';
 import ClientNav from './components/ClientNav';
 import ClientGotchisMythical from './routes/ClientGotchisDoubleMythicalEyes';
 
