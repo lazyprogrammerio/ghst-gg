@@ -37,7 +37,7 @@ export default function ClientNav() {
                 component={NavLink}
                 className={classes.button}
                 activeClassName='active'
-                to={{ pathname: `${match.url}/mythical-gotchis`, search: `?address=${clientActive}` }}
+                to={{ pathname: `${match.url}/mythical-gotchis` }}
             >
                 Myth Eyes
                 {
@@ -64,7 +64,7 @@ export default function ClientNav() {
                 component={NavLink}
                 className={classes.button}
                 activeClassName='active'
-                to={{ pathname: `${match.url}/unique-gotchis`, search: `?address=${clientActive}` }}
+                to={{ pathname: `${match.url}/unique-gotchis` }}
             >
                 Unique Looks
                 {

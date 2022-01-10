@@ -44,12 +44,8 @@ export default function Client() {
     }, [params.address]);
 
     useEffect(() => {
-        if(clientActive) {
             getClientData();
-            history.push({ path: location.pathname, search: `?address=${clientActive}` });
-        } else {
             history.push({ path: location.pathname });
-        }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clientActive]);
@@ -64,7 +60,7 @@ export default function Client() {
                 </title>
             </Helmet>
 
-            {!clientActive?.length ? (
+            {false ? (
                 <Box className={classes.alertWrapper}>
                     <Box className={classes.alertInner}>
                         <Alert severity='info' className={classes.alert}>
