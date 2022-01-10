@@ -4,7 +4,7 @@ import { LoadingButton } from '@mui/lab';
 
 import { loadRewardsStyles, routersStyles } from '../styles';
 
-import { ClientContext } from '../../../contexts/ClientContext';
+import { ClientContext } from '../../../contexts/GotchiverseContext';
 import commonUtils from '../../../utils/commonUtils';
 
 import Gotchi from '../../../components/Gotchi/GotchiSmall';
@@ -16,7 +16,7 @@ export default function ClientGotchis() {
         ...loadRewardsStyles(),
         ...routersStyles()
     };
-    const { mythicalGotchis, loadingMythicalGotchis, gotchis, gotchisFilter, loadingGotchis, sortData, reward, calculateReward, rewardCalculating, rewardCalculated } = useContext(ClientContext);
+    const { mythicalGotchis, loadingMythicalGotchis, gotchis, sortData} = useContext(ClientContext);
 
 
     if(loadingMythicalGotchis || !mythicalGotchis.length) {

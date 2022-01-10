@@ -24,7 +24,6 @@ export default function ClientNav() {
     const { 
         clientActive,
         gotchis, loadingGotchis,
-        mythicalGotchis, loadingMythicalGotchis,
         warehouse, loadingWarehouse,
         tickets, loadingTickets,
         realm, loadingRealm,

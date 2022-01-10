@@ -9,17 +9,12 @@ import styles from './styles';
 import commonUtils from '../../utils/commonUtils';
 
 import { LoginContext } from '../../contexts/LoginContext';
-import { ClientContext } from '../../contexts/ClientContext';
+import { ClientContext } from '../../contexts/GotchiverseContext';
 
 import LoginNavigation from '../../components/Login/LoginNavigation';
 import ProfilePane from '../../components/ProfilePane/ProfilePane';
 import ClientNav from './components/ClientNav';
-import ClientGotchis from './routes/ClientGotchis';
 import ClientGotchisMythical from './routes/ClientGotchisDoubleMythicalEyes';
-import ClientWarehouse from './routes/ClientWarehouse';
-import ClientTickets from './routes/ClientTickets';
-import ClientRealm from './routes/ClientRealm';
-import ClientInfo from './routes/ClientInfo';
 
 export default function Client() {
     const classes = styles();
@@ -84,12 +79,7 @@ export default function Client() {
                 <>
                     <ClientNav />
                     <Switch>
-                        <Route path={`${match.path}/gotchis`} component={ ClientGotchis } />
                         <Route path={`${match.path}/mythical-gotchis`} component={ ClientGotchisMythical } />
-                        <Route path={`${match.path}/warehouse`} component={ ClientWarehouse } />
-                        <Route path={`${match.path}/tickets`} component={ ClientTickets } />
-                        <Route path={`${match.path}/realm`} component={ ClientRealm } />
-                        <Route path={`${match.path}/info`} component={ ClientInfo } />
                         <Redirect from={match.path} to={`${match.path}/mythical-gotchis`} />
                     </Switch>
                 </>

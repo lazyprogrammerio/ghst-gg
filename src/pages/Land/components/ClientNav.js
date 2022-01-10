@@ -5,7 +5,7 @@ import { useRouteMatch } from 'react-router';
 
 import { NavLink } from 'react-router-dom';
 
-import { ClientContext } from '../../../contexts/ClientContext';
+import { ClientContext } from '../../../contexts/GotchiverseContext';
 
 import gotchiPlaceholder from '../../../assets/images/gotchi-placeholder.svg';
 import warehousePlaceholder from '../../../assets/wearables/15.svg';
@@ -23,12 +23,7 @@ export default function ClientNav() {
 
     const { 
         clientActive,
-        gotchis, loadingGotchis,
         mythicalGotchis, loadingMythicalGotchis,
-        warehouse, loadingWarehouse,
-        tickets, loadingTickets,
-        realm, loadingRealm,
-	addressInfo, loadingAddressInfo
      } = useContext(ClientContext);
 
     return (

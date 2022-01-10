@@ -20,6 +20,7 @@ import NotFound from './pages/NotFound/NotFound';
 import BaazaarContextProvider from "./contexts/BaazaarContext";
 import LoginContextProvider from './contexts/LoginContext';
 import ClientContextProvider from './contexts/ClientContext';
+import GotchiverseContextProvider from './contexts/GotchiverseContext';
 
 import { styled } from '@mui/system';
 
@@ -47,6 +48,7 @@ export default function App() {
             <BaazaarContextProvider>
                 <LoginContextProvider>
                     <ClientContextProvider>
+                    <GotchiverseContextProvider>
 
                         <Helmet>
                             <title>aavegotchi.land</title>
@@ -73,6 +75,7 @@ export default function App() {
                             <Footer />
                         </Wrapper>
 
+                    </GotchiverseContextProvider>
                     </ClientContextProvider>
                 </LoginContextProvider>
             </BaazaarContextProvider>
