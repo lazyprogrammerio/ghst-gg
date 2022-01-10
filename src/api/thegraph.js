@@ -59,8 +59,8 @@ const getApiDataMythGotchies = async (address) => {
 };
 
 const getApiDataUniqueGotchies = async (address) => {
-    //const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?is_unique=true`
-    const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?desired_traits=x,x,x,x,mythical,mythical&is_unique=true`
+    const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?is_unique=true`
+    //const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?desired_traits=x,x,x,x,mythical,mythical&is_unique=true`
 
     let response = await request(aavegotchiLandUrl)
     return JSON.parse(response.body)
