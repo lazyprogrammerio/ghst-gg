@@ -58,6 +58,15 @@ const getApiDataMythGotchies = async (address) => {
     return JSON.parse(response.body)
 };
 
+const getApiDataUniqueGotchies = async (address) => {
+    //const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?is_unique=true`
+    const aavegotchiLandUrl = `https://api.aavegotchi.land/gotchi?desired_traits=x,x,x,x,mythical,mythical&is_unique=true`
+
+    let response = await request(aavegotchiLandUrl)
+    return JSON.parse(response.body)
+};
+
+
 // multi query requests
 const graphJoin = async (client, queries) => {
     try {
@@ -236,6 +245,10 @@ export default {
 
     async getAddressInfoData(address) {
         return await getApiData(address)
+    },
+
+    async getUniqueGotchiesData(address) {
+        return await getApiDataUniqueGotchies(address)
     },
 
     async getDoubleMythGotchiesData(address) {

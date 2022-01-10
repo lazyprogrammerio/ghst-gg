@@ -40,7 +40,7 @@ const ClientContextProvider = (props) => {
     const getUniqueGotchis = (address) => {
         setLoadingUniqueGotchis(true);
 
-        thegraph.getDoubleMythGotchiesData(address).then((response)=> {
+        thegraph.getUniqueGotchiesData(address).then((response)=> {
 
             let [gFilter, gDir] = getFilter(uniqueGotchisFilter);
             setUniqueGotchis(commonUtils.basicSort(response, gFilter, gDir));
