@@ -24,6 +24,6 @@ Aavegotchi Farmers is a turn based blockchain game, where Aavegotchies can be pa
 >
 > Farmer items: Straw Hat, Farmer Jeans, Pitchfork, Handsaw, Wraangler Jeans, Lasso, 10 Gallon Hat.
 >
-> An eligible cowboy Aavegotchi has to be an eligible farmer and be equipped with at least two attack items.
+> An eligible Cowboy Aavegotchi has to be an eligible farmer and be equipped with at least two attack items.
 >
 > Attack items: Pitchfork, Handsaw, Lasso, Aagent Pistol, Sushi Knife, Portal Mage Axe, Portal Mage Black Axe.
