@@ -4,15 +4,15 @@ description: Short description of Aavegotchi Farmers
 
 # What is Aavegotchi Farmers?
 
-Aavegotchi Farmers is a turn based blockchain game, where Aavegotchies can be part of a farm and fight the neighbouring farms.
+Aavegotchi Farmers is a turn based blockchain game where Aavegotchis can farm and fight neigboring farms
 
 #### Aavegotchi Farmers gameplay
 
 > Create an Aavegotchi farm
 >
-> Add Aavegotchies to protect the farm or attack other farms
+> Put Aavegotchis to work protecting the farm or attacking other farms
 >
-> Fight the neighbouring Aavegotchi farms
+> Battling neighbouring Aavegotchi farms
 
 #### Aavegotchi Farmers Rules
 
@@ -26,4 +26,16 @@ Aavegotchi Farmers is a turn based blockchain game, where Aavegotchies can be pa
 >
 > An eligible Cowboy Aavegotchi has to be an eligible farmer and be equipped with at least two attack items.
 >
-> Attack items: Pitchfork, Handsaw, Lasso, Aagent Pistol, Sushi Knife, Portal Mage Axe, Portal Mage Black Axe.
+> Pitchfork, Handsaw, Lasso, Aagent Pistol, Sushi Knife, Portal Mage Axe, Portal Mage Black Axe.
+
+> Creating a farm requires ownership of an Aavegotchi Realm Parcel.
+>
+> A farm can have a maximum of 4 Aavegotchis.
+>
+> A Farmer Gotchi needs to be equipped with at least two farming items:
+>
+> Straw Hat, Farmer Jeans, Pitchfork, Handsaw, Wraangler Jeans, Lasso, 10 Gallon Hat.
+>
+> A Cowboy Gotchi must be a farmer and also equipped with at least two attack items:
+>
+> Pitchfork, Handsaw, Lasso, Aagent Pistol, Sushi Knife, Portal Mage Axe, Portal Mage Black Axe.
