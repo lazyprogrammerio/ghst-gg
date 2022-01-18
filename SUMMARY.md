@@ -4,8 +4,9 @@
 
 ## Guides
 
-* [Creating your first project](guides/creating-your-first-project.md)
-* [Creating your first task](guides/creating-your-first-task.md)
+* [Creating your first Aavegotchi Farm](guides/creating-your-first-aavegotchi-farm.md)
+* [Add Aavegotchies to your farm](guides/add-aavegotchies-to-your-farm.md)
+* [Fight neighbouring farms](guides/fight-neighbouring-farms.md)
 
 ## Fundamentals
 
