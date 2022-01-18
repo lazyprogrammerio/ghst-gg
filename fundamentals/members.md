@@ -2,3 +2,4 @@
 
 Creator: firstaavegotchi.eth
 
+Contributor: Kokusho
